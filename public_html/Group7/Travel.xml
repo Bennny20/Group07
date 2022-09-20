@@ -17,11 +17,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R001">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>
                         <room idRoom="R002">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>  
                     </rooms>                            
                 </roomType>
@@ -30,11 +30,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R003">
                             <Price> 3000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R004">
                             <Price> 3000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room> 
                     </rooms>                  
                   
@@ -45,11 +45,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R005">
                             <Price> 2000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R006">
                             <Price> 2000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room> 
                     </rooms>                  
                
@@ -71,11 +71,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R007">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>
                         <room idRoom="R008">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>
@@ -84,11 +84,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R009">
                             <Price> 3000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R010">
                             <Price> 3000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>
@@ -97,11 +97,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R011">
                             <Price> 2000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R012">
                             <Price> 2000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>
@@ -121,11 +121,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R013">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>
                         <room idRoom="R014">
                             <Price> 1000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>
@@ -134,11 +134,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R015">
                             <Price> 3000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R016">
                             <Price> 3000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>
@@ -147,11 +147,11 @@
                     <rooms quanty ="2">
                         <room idRoom="R017">
                             <Price> 2000 </Price>
-                            <Status> UnAvailable</Status>
+                            <Status>UnAvailable</Status>
                         </room>
                         <room idRoom="R018">
                             <Price> 2000 </Price>
-                            <Status> Available</Status>
+                            <Status>Available</Status>
                         </room>                   
                     </rooms>
                 </roomType>

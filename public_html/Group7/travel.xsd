@@ -8,10 +8,17 @@ and open the template in the editor.
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
-   <xs:simpleType name="number1to10_Type">
+    <xs:simpleType name="number1to10_Type">
         <xs:restriction base="xs:positiveInteger">
             <xs:minExclusive value="1"/>
             <xs:maxExclusive value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="price_Type">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minExclusive value="1"/>
+            <xs:maxExclusive value="1000000"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -19,10 +26,22 @@ and open the template in the editor.
     <xs:simpleType name="limitString_Type">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="1000"/>
+            <xs:maxLength value="100"/>
         </xs:restriction>
     </xs:simpleType>
-
+    <xs:simpleType name="limitStringURL_Type">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10000000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tinhtrang_Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UnAvailable"/>
+            <xs:enumeration value="Available"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="locationID_Type">
         <xs:restriction base="xs:ID">
@@ -30,22 +49,68 @@ and open the template in the editor.
         </xs:restriction>
     </xs:simpleType>
     
-           <xs:element name="hotel">
+    <xs:simpleType name="hotelID_Type">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="H[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeRoomID_Type">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="TR[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+   
+    <xs:simpleType name="RoomID_Type">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="R[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <xs:element name="room">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Price" type="price_Type"/>
+                <xs:element name="Status" type="tinhtrang_Type"/>
+            </xs:sequence>
+            <xs:attribute name="idRoom" type="RoomID_Type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="rooms">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="room" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="quanty" type="number1to10_Type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="roomType">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="limitString_Type"/>
+                <xs:element ref="rooms" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="idTypeRoom" type="TypeRoomID_Type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="hotel">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nameHotel" type="limitString_Type"/>
                 <xs:element name="descriptionHotel" type="limitString_Type"/>
-                <xs:element ref="hotel" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="imgurl" type="limitStringURL_Type"/>
+                <xs:element ref="roomType" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
-            <xs:attribute name="idHotel" type="locationID_Type" use="required"/>
+            <xs:attribute name="idHotel" type="hotelID_Type" use="required"/>
         </xs:complexType>
     </xs:element>
 
-       <xs:element name="hotels">
+    <xs:element name="hotels">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nameHotel" type="limitString_Type"/>
-                <xs:element name="descriptionHotel" type="limitString_Type"/>
                 <xs:element ref="hotel" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>

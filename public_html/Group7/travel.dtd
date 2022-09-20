@@ -14,10 +14,10 @@
 <!ELEMENT descriptionHotel (#PCDATA)>
 <!ELEMENT imgurl (#PCDATA)>
 
-<!ELEMENT roomType (#PCDATA| rooms)*>
+<!ELEMENT roomType (#PCDATA| name | rooms )*>
 <!ATTLIST roomType idTypeRoom ID #IMPLIED>
-<!ATTLIST roomType name CDATA #REQUIRED>
 
+<!ELEMENT name (#PCDATA)>
 <!ELEMENT rooms (#PCDATA| room)*>
 <!ATTLIST rooms quanty CDATA #REQUIRED>
 
