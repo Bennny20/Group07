@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+   <xs:simpleType name="number1to10_Type">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minExclusive value="1"/>
+            <xs:maxExclusive value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    
+    <xs:simpleType name="limitString_Type">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    
+    <xs:simpleType name="locationID_Type">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="L[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+           <xs:element name="hotel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nameHotel" type="limitString_Type"/>
+                <xs:element name="descriptionHotel" type="limitString_Type"/>
+                <xs:element ref="hotel" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="idHotel" type="locationID_Type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+       <xs:element name="hotels">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nameHotel" type="limitString_Type"/>
+                <xs:element name="descriptionHotel" type="limitString_Type"/>
+                <xs:element ref="hotel" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="limitString_Type"/>
+                <xs:element name="description" type="limitString_Type"/>
+                <xs:element ref="hotels" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="locationID_Type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Locations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
