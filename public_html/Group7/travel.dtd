@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Locations (#PCDATA | location)*>
+
+<!ELEMENT location (#PCDATA| name| description| hotels)*>
+<!ATTLIST location id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT hotels (#PCDATA| hotel)*>
+<!ELEMENT hotel (#PCDATA| nameHotel| descriptionHotel| imgurl | roomType)*>
+<!ATTLIST hotel idHotel ID #IMPLIED>
+<!ELEMENT nameHotel (#PCDATA)>
+<!ELEMENT descriptionHotel (#PCDATA)>
+<!ELEMENT imgurl (#PCDATA)>
+
+<!ELEMENT roomType (#PCDATA| rooms)*>
+<!ATTLIST roomType idTypeRoom ID #IMPLIED>
+<!ATTLIST roomType name CDATA #REQUIRED>
+
+<!ELEMENT rooms (#PCDATA| room)*>
+<!ATTLIST rooms quanty CDATA #REQUIRED>
+
+<!ELEMENT room (#PCDATA| Price | Status)*>
+<!ATTLIST room idRoom ID #IMPLIED>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Status (#PCDATA)>
+
+
+
+
+
